@@ -5,7 +5,7 @@ import App from "./App.jsx";
 import { About } from "./components/About/About.jsx";
 import { Trams } from "./components/Trams/Trams.jsx";
 import "./index.css";
-import { Users } from "./components/users/users.jsx";
+import { AllUsers} from "./components/Allusers/AllUsers.jsx";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/user",
-    Component: Users,
+    Component: AllUsers,
   },
 ]);
 

@@ -1,14 +1,15 @@
-import { Suspense } from "react";
+import { use } from "react";
 import { User } from "../user/User";
-const users = fetch("https://jsonplaceholder.typicode.com/users").then((res) =>
-  res.json()
-);
-export const Users = () => {
+
+export const Users = ({ users }) => {
+  const allUsers = use(users);
+  
   return (
     <div>
-      <Suspense fallback={<div>Loading users...</div>}>
-        <User users={users} />
-      </Suspense>
+      {allUsers.map((user) => (
+        <User key={user.id} user={user} />
+      ))}
     </div>
   );
+
 };
