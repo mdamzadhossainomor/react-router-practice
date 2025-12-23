@@ -6,6 +6,7 @@ import { About } from "./components/About/About.jsx";
 import { Trams } from "./components/Trams/Trams.jsx";
 import "./index.css";
 import { AllUsers} from "./components/Allusers/AllUsers.jsx";
+import { ParamsData } from "./components/paramsData/ParamsData.jsx";
 
 const router = createBrowserRouter([
   {
@@ -21,8 +22,13 @@ const router = createBrowserRouter([
     Component: Trams,
   },
   {
-    path: "/user",
+    path: "/users",
     Component: AllUsers,
+  },
+  {
+    path: "/users/:userId",
+    loader: ({params}) => fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`),
+    Component: ParamsData,
   },
 ]);
 

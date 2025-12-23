@@ -1,5 +1,6 @@
 import { Suspense, useState } from "react";
 import { UserDetails } from "./UserDetails";
+import { Link } from "react-router";
 
 export const User = ({ user }) => {
   const { id, name, username } = user;
@@ -16,10 +17,13 @@ export const User = ({ user }) => {
         <div className="card-body">
           <h2 className="text-center text-3xl"> User Name:{name}</h2>
           <p>User Email:{username}</p>
-          <div className="justify-center card-actions">
+          <div className="justify-between card-actions">
             <button onClick={handleViewMore} className="btn btn-primary">
               {viewMore ? "view less" : "view more"}
             </button>
+            <Link to={`${id}`} className="btn btn-primary">
+              Params view
+            </Link>
           </div>
         </div>
 
