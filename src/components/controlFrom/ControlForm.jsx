@@ -1,12 +1,9 @@
-import { useState } from "react";
-
 export const ControlForm = () => {
   //   const handleSubmit = (event) => {
   //     event.preventDefault();
   //     console.log(event.target.name.value);
   //     console.log(event.target.email.value);
   //   };
-  const [formData, setFormData] = useState();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,6 +11,7 @@ export const ControlForm = () => {
     console.log(e.target.email.value);
   };
   const handleChange = (e) => {
+    console.log(e.target.value);
     console.log(e.target.value);
   };
   return (
@@ -31,16 +29,10 @@ export const ControlForm = () => {
     <div>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          defaultValue={formData}
-          onChange={handleChange}
-        />
+        <input type="text" id="name" name="name" onChange={handleChange} />
         <br />
         <label htmlFor="email">Email:</label>
-        <input type="email" id="email" name="email" />
+        <input type="email" id="email" name="email" onChange={handleChange} />
         <br />
         <button type="submit">Submit</button>
       </form>
