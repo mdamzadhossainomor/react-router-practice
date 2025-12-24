@@ -7,6 +7,7 @@ import { Trams } from "./components/Trams/Trams.jsx";
 import "./index.css";
 import { AllUsers} from "./components/Allusers/AllUsers.jsx";
 import { ParamsData } from "./components/paramsData/ParamsData.jsx";
+import { ControlForm } from "./components/controlFrom/ControlForm.jsx";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/users",
     Component: AllUsers,
+  },
+  {
+    path: "/form",
+    Component: ControlForm,
   },
   {
     path: "/users/:userId",

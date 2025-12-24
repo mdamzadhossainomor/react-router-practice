@@ -7,6 +7,7 @@ export const NavBar = () => {
       <NavLink to="/about">About</NavLink>
       <NavLink to="/trams">Trams</NavLink>
       <NavLink to="/users">User</NavLink>
+      <NavLink to="/form">Form</NavLink>
     </div>
   );
 };
